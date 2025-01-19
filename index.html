@@ -21,6 +21,8 @@
         padding: 0;
         width: 100%;
         height: 100%;
+        background: url('https://upload.wikimedia.org/wikipedia/commons/8/80/Earth_from_Space.jpg') no-repeat center center fixed; /* Hình nền Trái Đất */
+        background-size: cover; /* Đảm bảo hình nền phủ toàn bộ */
     }
 
     .NameFtTienMinh, .TieuSu, #userName {
@@ -28,45 +30,47 @@
         text-align: center;
     }
 
-    /* Căn giữa tất cả các phần tử trong thẻ .some-element */
     .some-element {
         display: flex;
         flex-direction: column;
         align-items: center;
         justify-content: center;
-        min-height: 100vh; /* Đảm bảo trang có độ cao đầy đủ */
+        min-height: 100vh;
         text-align: center;
         width: 100%;
         margin: 0 auto;
+        position: relative;
+        z-index: 2; /* Đảm bảo các phần tử hiển thị phía trên nền */
     }
 
-    .Facebook, .Youtube, .Telegram, .Zalo {
-        display: inline-block;
-        margin-bottom: 10px;
+    /* Thêm kiểu cho ô key */
+    #keyDisplay, .button span {
         font-size: 18px;
-        padding: 10px 20px;
-        text-decoration: none;
-        background-color: #131315;
-        color: white;
-        border-radius: 20px;
-    }
-
-    /* Căn giữa phần kỹ năng */
-    #skills {
-        text-align: center;
+        font-family: 'PottOne', sans-serif;
         margin-top: 20px;
+        color: white; /* Chữ màu trắng */
+        background: linear-gradient(to right, #FF5733, #33FF57, #3357FF, #FF33A1); /* Màu gradient */
+        padding: 15px;
+        border-radius: 50px; /* Hộp tròn */
+        width: fit-content;
+        margin: 0 auto;
+        display: inline-block;
     }
 
+    /* Thêm cho button "keytool" để giống kiểu hộp tròn nhiều màu */
     .button {
-        background-color: #131315;
+        background: linear-gradient(to right, #FF5733, #33FF57, #3357FF, #FF33A1); /* Màu gradient */
+        padding: 15px;
+        border-radius: 50px; /* Hộp tròn */
         border: none;
-        color: white;
-        padding: 15px 32px;
-        text-align: center;
-        font-size: 16px;
-        border-radius: 15px;
-        box-shadow: 2px 2px 20px rgba(0, 0, 0, 0.25);
+        cursor: pointer;
     }
+
+    .button span {
+        color: white;
+        font-size: 18px;
+    }
+
   </style>
  </head>
  <body>
@@ -204,8 +208,38 @@
        </span>
       </p>
      </footer>
-    </div>
+
+     <!-- Phần hiển thị key -->
+     <div id="keyDisplay">
+        <strong>Key từ URL:</strong> <span id="keyValue">Chưa có key</span>
+     </div>
+
    </div>
   </div>
+
+  <script>
+    // Hàm lấy giá trị từ URL
+    function getQueryParameter(name) {
+      const urlParams = new URLSearchParams(window.location.search);
+      return urlParams.get(name);
+    }
+
+    // Lấy giá trị key từ URL và hiển thị nó
+    const key = getQueryParameter('key');
+    if (key) {
+      document.getElementById('keyValue').innerText = key;
+    }
+
+    // Cập nhật thời gian hiện tại mỗi giây
+    function updateTime() {
+      const now = new Date();
+      const formattedTime = now.toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit', second: '2-digit' });
+      document.getElementById("currentTime").innerText = formattedTime;
+    }
+
+    setInterval(updateTime, 1000);
+    updateTime();
+  </script>
+
  </body>
 </html>
