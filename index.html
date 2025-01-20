@@ -1,245 +1,150 @@
 <!DOCTYPE html>
 <html lang="en">
- <head>
-  <meta charset="utf-8"/>
-  <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport"/>
-  <meta content="4ccb4741c04ba885cf9b8e1c3d1fd59a" name="monetag"/>
-  <link href="./img/icon.ico" rel="shortcut icon" type="image/x-icon"/>
-  <title>THAIDWONG</title>
-  <link href="./css/index.css" rel="stylesheet"/>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css" rel="stylesheet"/>
-  <link href="https://fonts.googleapis.com/css?family=Pattaya|Potta One|Rowdies|Braah One|Quicksand|Open Sans" rel="stylesheet"/>
-  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
-  <meta content="#ffffff" name="msapplication-TileColor"/>
-  <meta content="#ffffff" name="theme-color"/>
-  <style>
-    /* Căn giữa chữ trong các phần tử */
-    body {
-        text-align: center;
-        font-family: 'Quicksand', sans-serif;
-        margin: 0;
-        padding: 0;
-        width: 100%;
-        height: 100%;
-        background: url('https://upload.wikimedia.org/wikipedia/commons/8/80/Earth_from_Space.jpg') no-repeat center center fixed; /* Hình nền Trái Đất */
-        background-size: cover; /* Đảm bảo hình nền phủ toàn bộ */
-    }
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>__THAIDWONG__</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Quicksand|Rowdies|Pattaya" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Quicksand', sans-serif;
+            background: url('https://thuthuatnhanh.com/wp-content/uploads/2022/04/anh-nen-trai-dat-lung-linh.jpg') no-repeat center center fixed;
+            background-size: cover;
+            color: white;
+            text-align: center;
+        }
 
-    .NameFtTienMinh, .TieuSu, #userName {
-        display: block;
-        text-align: center;
-    }
+        .content {
+            background-color: rgba(0, 0, 0, 0.7);
+            padding: 20px;
+            border-radius: 15px;
+            margin: 20px;
+            display: inline-block;
+        }
 
-    .some-element {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        min-height: 100vh;
-        text-align: center;
-        width: 100%;
-        margin: 0 auto;
-        position: relative;
-        z-index: 2; /* Đảm bảo các phần tử hiển thị phía trên nền */
-    }
+        .profile {
+            text-align: center;
+        }
 
-    /* Thêm kiểu cho ô key */
-    #keyDisplay {
-        font-size: 18px;
-        font-family: 'PottOne', sans-serif;
-        margin-top: 20px;
-        color: white; /* Chữ màu trắng */
-        background: linear-gradient(to right, #FF5733, #33FF57, #3357FF, #FF33A1); /* Màu gradient */
-        padding: 15px;
-        border-radius: 50px; /* Hộp tròn */
-        width: fit-content;
-        margin: 0 auto;
-        display: inline-block;
-    }
+        .profile img {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            border: 3px solid #fff;
+        }
 
-    /* Thêm cho button "keytool" để giống kiểu hộp tròn nhiều màu */
-    .button {
-        background: linear-gradient(to right, #FF5733, #33FF57, #3357FF, #FF33A1); /* Màu gradient */
-        padding: 15px;
-        border-radius: 50px; /* Hộp tròn */
-        border: none;
-        cursor: pointer;
-    }
+        .profile h2 {
+            font-family: 'Pattaya', sans-serif;
+            font-size: 26px;
+        }
 
-    .button span {
-        color: white;
-        font-size: 18px;
-    }
+        .social-links a {
+            display: inline-block;
+            margin: 10px;
+            padding: 10px 20px;
+            color: white;
+            text-decoration: none;
+            border: 1px solid white;
+            border-radius: 5px;
+            transition: background 0.3s;
+        }
 
-  </style>
- </head>
- <body>
-  <div class="border">
-   <div id="overlay1"></div>
-   <div class="some-element">
-     <div class="BlurWebs">
-      <div class="Topnav">
-       <a class="Active" style="font-family: 'Concert One';">HOME</a>
-       <a style="font-family: 'Concert One'; color: rgb(255, 0, 0);">
-        <span id="fps">60.0</span> FPS
-       </a>
-      </div>
-      <br/>
-      <p align="center">
-       <img alt="TienMinh" class="Blob" height="120" src="img/avt.jpg" width="120"/>
-      </p>
-      <h2 class="NameFtTienMinh">
-       <div id="userName" style="font-family: 'Pattaya'; font-size: 26px;">
-        __THAIDWONG__
-        <img alt="Tích Xanh" height="19" src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e4/Twitter_Verified_Badge.svg/512px-Twitter_Verified_Badge.svg.png" width="19"/>
-       </div>
-      </h2>
-      <h2 class="TieuSu" style="font-family: 'Quicksand';">
-       Hi, I'm a Developer
-       <br/>
-       I like website design
-       <br/>
-       __THAIDWONG__
-      </h2>
-      <br>
-      <strong style="color: rgb(255, 0, 0); font-size: 16px; font-family: 'Quicksand';">
-       Current Time:
-      </strong>
-      <span id="currentTime" style="color: rgb(0, 240, 120); font-size: 16px; font-family: 'Rowdies';">
-       Loading...
-      </span>
-      <br/>
-      <br/>
-      <hr class="New"/>
-      <br/>
-      <div class="MangXaHoiFtTienMinh">
-       <u class="NameFtTienMinh" style="font-size: 25px;">
-        Mạng Xã Hội
-       </u>
-       <br/>
-       <a href="https://www.facebook.com/share/15VXZShz1r/?mibextid=wwXIfrr">
-        <div class="Facebook">
-         <i class="bi bi-facebook"></i> Facebook
+        .social-links a:hover {
+            background: white;
+            color: black;
+        }
+
+        .bank-info {
+            margin-top: 20px;
+        }
+
+        .key-display {
+            margin: 20px auto;
+            padding: 10px 20px;
+            background: linear-gradient(45deg, #ff5722, #ff9800, #ffc107);
+            color: black;
+            font-size: 18px;
+            border-radius: 25px;
+            width: 300px;
+            font-weight: bold;
+            cursor: pointer; /* Thêm hiệu ứng trỏ chuột */
+            transition: background 0.3s;
+        }
+
+        .key-display:hover {
+            background: linear-gradient(45deg, #ffc107, #ff9800, #ff5722);
+        }
+
+        footer {
+            margin-top: 20px;
+            color: white;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+    <div class="content">
+        <div class="profile">
+            <img src="https://i.imgur.com/T3Cu4Ii.png" alt="THAIDWONG">
+            <h2>THÁI DƯƠNG <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e4/Twitter_Verified_Badge.svg/512px-Twitter_Verified_Badge.svg.png" alt="Verified" style="width: 19px; height: 19px; vertical-align: middle;"></h2>
+            <p>Hi, I'm a Developer<br>I like website design<br>__THAIDWONG__</p>
+            <p>đừng doss web này nha</span></p>
         </div>
-       </a>
-       <br/>
-       <a href="https://www.youtube.com/@ahihi1-r4k">
-        <div class="Youtube">
-         <i class="bi bi-youtube"></i> Youtube
+
+        <hr>
+
+        <div class="social-links">
+            <h3>Mạng Xã Hội</h3>
+            <a href="https://www.facebook.com/share/15VXZShz1r/?mibextid=wwXIfr"><i class="bi bi-facebook"></i> Facebook</a>
+            <a href="https://www.youtube.com/@ahihi1-r4k"><i class="bi bi-youtube"></i> Youtube</a>
+            <a href="https://t.me/thailuvaya"><i class="bi bi-telegram"></i> Telegram</a>
+            <a href="https://github.com/thaiidwong"><i class="bi bi-github"></i> Github</a>
         </div>
-       </a>
-       <br/>
-       <a href="https://t.me/thailuvaya">
-        <div class="Telegram">
-         <i class="bi bi-telegram"></i> Telegram
+
+        <hr>
+
+        <div class="bank-info">
+            <h3>Thông Tin Bank</h3>
+            <p><strong>MoMo:</strong> ch có<br>THÁI DƯƠNG</p>
+            <p><strong>MB Bank:</strong> ch có<br>THÁI DƯOGNG</p>
         </div>
-       </a>
-       <br>
-       <a href="https://zalo.me/g/fctosv948">
-        <div class="Zalo">
-         <i class="bi bi-chat-fill"></i> Zalo
+
+        <hr>
+
+        <div class="key-display" id="keyDisplay" onclick="copyKey()">
+            Key: {Key9827}
         </div>
-       </a>
-       <br/>
-      </div>
-      <br/>
-      <br/>
-     </div>
-     <hr class="New"/>
-     <div class="MangXaHoiFtTienMinh">
-      <u class="NameFtTienMinh" style="font-size: 25px;">
-       Thông Tin Bank
-      </u>
-      <br/>
-      <a href="#">
-       <div class="dev">
-        <img alt="MoMo Logo" src="img/MoMo_Logo.png" style="width: 30px; height: 30px;"/>
-        <h3>CH CÓ</h3>
-        THAIDWONG
-        <br/>
-        <img alt="MB Bank Logo" src="img/Logo_MB_new.png" style="width: 30px; height: 30px;"/>
-        <h3>ch có=)</h3>
-        THAIDWONG
-       </div>
-      </a>
-      <br/>
-      <br/>
-     </div>
-     <hr class="New"/>
-     <section id="skills">
-      <div class="NameFtTienMinh">
-       <div class="row">
-        <skills class="col-12">
-         <br/>
-         <u class="NameFtTienMinh" style="font-size: 25px;">
-          Thông Tin Key
-         </u>
-        </skills>
-       </div>
-      </div>
-      <div class="col-lg-6 col-12">
-       <div class="skill-box">
-        <div class="skill">
-         <div class="form">
-          <div>
-           <button class="button" name="submit" onclick="copyToClipboard('#keytool')" type="submit">
-            <span id="keytool">BÁN CHƯA LẤY KEY</span>
-           </button>
-          </div>
-         </div>
-        </div>
-       </div>
-      </div>
-     </section>
-     <br/>
-     <br/>
-     <hr class="New"/>
-     <footer class="Cuoi Trang">
-      <p class="TienMinhFtCopyright">
-       <span class="copyright">
-        Created By
-        <a class="copyright" href="https://www.facebook.com/profile.php?id=100085913372600" style="text-decoration: none;">
-         <font class="rainbow" color="white">
-          HuongDev
-         </font>
-        </a>
-        <br>
-        <strong>All rights reserved Â© 2024</strong>
-       </span>
-      </p>
-     </footer>
 
-     <!-- Phần hiển thị key -->
-     <div id="keyDisplay">
-        <strong>Key từ URL:</strong> <span id="keyValue">Chưa có key</span>
-     </div>
+        <footer>
+            Created by <a href="https://www.facebook.com/share/15VXZShz1r/?mibextid=wwXIfr" style="color: lightblue;">THAIDWONG</a><br>
+            All rights reserved © 2025
+        </footer>
+    </div>
 
-   </div>
-  </div>
+    <script>
+        // Lấy giá trị key từ URL và hiển thị
+        function getQueryParameter(name) {
+            const urlParams = new URLSearchParams(window.location.search);
+            return urlParams.get(name);
+        }
 
-  <script>
-    // Hàm lấy giá trị từ URL
-    function getQueryParameter(name) {
-      const urlParams = new URLSearchParams(window.location.search);
-      return urlParams.get(name);
-    }
+        const key = getQueryParameter('key');
+        if (key) {
+            document.getElementById('keyDisplay').innerText = `Key: ${key}`;
+        }
 
-    // Lấy giá trị key từ URL và hiển thị nó
-    const key = getQueryParameter('key');
-    if (key) {
-      document.getElementById('keyValue').innerText = key;
-    }
-
-    // Cập nhật thời gian hiện tại mỗi giây
-    function updateTime() {
-      const now = new Date();
-      const formattedTime = now.toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit', second: '2-digit' });
-      document.getElementById("currentTime").innerText = formattedTime;
-    }
-
-    setInterval(updateTime, 1000);
-    updateTime();
-  </script>
-
- </body>
+        // Sao chép key vào clipboard
+        function copyKey() {
+            const keyText = document.getElementById('keyDisplay').innerText.replace('Key: ', '');
+            navigator.clipboard.writeText(keyText).then(() => {
+                alert("Key copied to clipboard!");
+            }).catch(err => {
+                alert("Failed to copy key: " + err);
+            });
+        }
+    </script>
+</body>
 </html>
