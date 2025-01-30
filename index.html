@@ -115,7 +115,7 @@
         <hr>
 
         <div class="key-display" id="keyDisplay" onclick="copyKey()">
-            chưa lấy key,key sau dấu =
+            undefind
         </div>
 
         <footer>
@@ -138,7 +138,7 @@
 
         // Sao chép key vào clipboard
         function copyKey() {
-            const keyText = document.getElementById('keyDisplay').innerText.replace('Key: ', '');
+            const keyText = document.getElementById('keyDisplay').innerText.replace('key:', '');
             navigator.clipboard.writeText(keyText).then(() => {
                 alert("Key copied to clipboard!");
             }).catch(err => {
